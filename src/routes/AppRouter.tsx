@@ -1,5 +1,7 @@
+// React
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Sliders from '../components/Sliders/Sliders';
+// Components
+import Header from '../outlets/header/Header';
 
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
@@ -9,7 +11,7 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Sliders />} />
+        <Route path="/" element={<Header />} />
         <Route path="/about" element={<h1>About</h1>} />
       </Routes>
     </BrowserRouter>

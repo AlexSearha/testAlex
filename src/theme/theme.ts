@@ -1,4 +1,42 @@
+import { PaletteMode } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
+
+const getDesignTokens = (mode: PaletteMode) => ({
+  palette: {
+    mode,
+    ...(mode === 'light'
+      ? {
+          // palette values for light mode
+          primary: {
+            main: '#5D79F6',
+          },
+          divider: '#EBEBEB',
+          background: {
+            default: '#FAFAFA',
+            paper: '#fff',
+          },
+          text: {
+            primary: '#787A83',
+            secondary: '#000000',
+          },
+        }
+      : {
+          // palette values for dark mode
+          primary: {
+            main: '#5D79F6',
+          },
+          divider: '#383944',
+          background: {
+            default: '#26262E',
+            paper: '#383A44',
+          },
+          text: {
+            primary: '#C6C8D3',
+            secondary: '#FFFFFF',
+          },
+        }),
+  },
+});
 
 const themeInput = createTheme({
   components: {
@@ -44,13 +82,13 @@ const customTabs = createTheme({
           borderRadius: 25,
           textTransform: 'none',
           fontWeight: 'bold',
-        },
-        selected: {
-          boxShadow: '1px 1px 3px #00000066',
-          fontWeight: 'bold',
-          backgroundColor: 'white',
-          '&.Mui-focusVisible': {
-            outline: 'none',
+          '&.Mui-selected': {
+            boxShadow: '1px 1px 3px #00000066',
+            fontWeight: 'bold',
+            backgroundColor: 'white',
+            '&.Mui-focusVisible': {
+              outline: 'none',
+            },
           },
         },
       },
@@ -58,4 +96,4 @@ const customTabs = createTheme({
   },
 });
 
-export { themeInput, customTabs };
+export { getDesignTokens, themeInput, customTabs };

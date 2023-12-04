@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 // Components
 import DropdownCard from '../Dropdowns/Dropdown';
 // CSS
-import './style.scss';
+// import './style.scss';
 
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
