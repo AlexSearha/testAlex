@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import CardComponent from '../components/Card/Card';
+import InputGroup from '../components/InputGroup/InputGroup';
 
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
@@ -9,7 +9,7 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CardComponent />} />
+        <Route path="/" element={<InputGroup />} />
         <Route path="/about" element={<h1>About</h1>} />
       </Routes>
     </BrowserRouter>
