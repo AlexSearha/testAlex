@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { Box, ThemeProvider } from '@mui/material';
-import theme from '../../theme/theme';
+import { themeInput } from '../../theme/theme';
 
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
@@ -14,7 +14,7 @@ export default function InputGroup() {
   // ----------------------------RETURN----------------------------------//
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeInput}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }} m={1}>
         <TextField
           placeholder="Email"
