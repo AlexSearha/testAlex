@@ -7,8 +7,6 @@ import { Box, useTheme } from '@mui/material';
 import test from '../../assets/project-placeholder-dark.webp';
 // Components
 import DropdownCard from '../Dropdowns/Dropdown';
-// CSS
-// import './style.scss';
 
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
