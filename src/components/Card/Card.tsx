@@ -4,38 +4,62 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Box, useTheme } from '@mui/material';
-import test from '../../assets/project-placeholder-dark.webp';
+// Images
+import darkGenericImage from '../../assets/project-placeholder-dark.webp';
+import lightGenericImage from '../../assets/project-placeholder-light.webp';
 // Components
 import DropdownCard from '../Dropdowns/Dropdown';
-
+// CSS
+import './style.scss';
+// Interface
+interface CardProps {
+  title: string;
+  description: string;
+  image: string;
+}
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
 // --------------------------------------------------------------------//
 
-export default function CardComponent() {
+export default function CardComponent({
+  title,
+  description,
+  image,
+}: CardProps) {
   const theme = useTheme();
+  const genericImage =
+    theme.palette.mode === 'dark' ? darkGenericImage : lightGenericImage;
+  // ----------------------------RETURN----------------------------------//
+
   return (
     <Card
+      className="card"
       sx={{
-        flex: '1 0 auto',
+        display: 'flex',
+        flexDirection: 'column',
         maxWidth: 266,
         boxShadow: 0,
         backgroundColor: theme.palette.background.default,
       }}
     >
       <CardMedia
+        className="card-image"
         component="img"
-        image={test}
+        image={image || genericImage}
         alt="dark-placeholder"
         height={168}
       />
       <CardContent
+        className="card-content"
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
           padding: 0,
           backgroundColor: theme.palette.background.default,
           pt: 1,
+          '&:last-child': {
+            paddingBottom: 0,
+          },
         }}
       >
         <Box>
@@ -44,10 +68,10 @@ export default function CardComponent() {
             variant="body2"
             color="text.primary"
           >
-            Lumia
+            {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Brest
+            {description}
           </Typography>
         </Box>
         <DropdownCard />

@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 // MUI
 import { Box, Button } from '@mui/material';
+// Client
+import { useMutation } from '@apollo/client';
 // Images
 import logo from '../../assets/logo-white.svg';
-import Sliders from '../../components/Sliders/Sliders';
 // Components
+import Sliders from '../../components/Sliders/Sliders';
 import InputGroup from '../../components/InputGroup/InputGroup';
+// API
+import { LOGIN } from '../../api/queries/queries';
 // CSS
 import './style.scss';
 
@@ -17,11 +21,23 @@ export default function AuthPage() {
   const [tabSelect, setTabSelect] = useState(0);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loginMutation] = useMutation(LOGIN);
 
   // ----------------------------FUNCTIONS------------------------------//
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
+    try {
+      const { data } = await loginMutation({
+        variables: {
+          email,
+          password,
+        },
+      });
+      console.log('data: ', data);
+    } catch (error) {
+      console.error('Erreur de connexion :', error);
+    }
   };
 
   // ----------------------------RETURN----------------------------------//
@@ -40,7 +56,7 @@ export default function AuthPage() {
         <img src={logo} alt="logo de archireport" />
         <p>L&apos;application pour vos suivis de chantier et de projets</p>
       </div>
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form" method="post" onSubmit={handleSubmit}>
         <Sliders setTabSelect={setTabSelect} tabSelect={tabSelect} />
         <div style={{ flexGrow: 1 }}>
           {tabSelect === 0 ? (

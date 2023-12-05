@@ -107,8 +107,8 @@ export default function DropdownCard() {
           <FileCopyIcon />
           Dupliquer
         </MenuItem>
-        <MenuItem sx={{ color: 'red' }} onClick={handleClose} disableRipple>
-          <DeleteOutlineOutlinedIcon style={{ color: 'red' }} />
+        <MenuItem sx={{ color: '#FF6666' }} onClick={handleClose} disableRipple>
+          <DeleteOutlineOutlinedIcon style={{ color: '#FF6666' }} />
           Supprimer
         </MenuItem>
       </StyledMenu>
