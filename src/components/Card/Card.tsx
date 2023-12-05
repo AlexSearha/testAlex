@@ -17,6 +17,7 @@ interface CardProps {
   description: string;
   image: string;
 }
+
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
 // --------------------------------------------------------------------//
@@ -29,6 +30,7 @@ export default function CardComponent({
   const theme = useTheme();
   const genericImage =
     theme.palette.mode === 'dark' ? darkGenericImage : lightGenericImage;
+
   // ----------------------------RETURN----------------------------------//
 
   return (

@@ -1,3 +1,6 @@
+// React
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // MUI
 import { useTheme } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
@@ -9,6 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+// Context
 import { useThemeContext } from '../../theme/ThemeContextProvider';
 
 // --------------------------------------------------------------------//
@@ -16,8 +20,24 @@ import { useThemeContext } from '../../theme/ThemeContextProvider';
 // --------------------------------------------------------------------//
 
 export default function Header() {
-  const { mode, toggleColorMode } = useThemeContext();
+  const { mode, toggleColorMode, toggleIsLogged, isLogged } = useThemeContext();
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  // ----------------------------FUNCTIONS------------------------------//
+
+  const handleLogout = () => {
+    toggleIsLogged();
+  };
+
+  // ----------------------------USEEFFECTS------------------------------//
+
+  useEffect(() => {
+    if (!isLogged) {
+      navigate('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLogged]);
 
   // ----------------------------RETURN----------------------------------//
 
@@ -26,8 +46,8 @@ export default function Header() {
       position="static"
       sx={{ background: theme.palette.background.default, boxShadow: 0 }}
     >
-      <Toolbar sx={{ justifyContent: true ? 'normal' : 'flex-end' }}>
-        {true && (
+      <Toolbar sx={{ justifyContent: isLogged ? 'normal' : 'flex-end' }}>
+        {isLogged && (
           <Typography
             component="div"
             sx={{ flexGrow: 1, color: theme.palette.text.secondary }}
@@ -45,8 +65,8 @@ export default function Header() {
               <LightModeOutlinedIcon />
             )}
           </IconButton>
-          {true ? (
-            <Tooltip title="Se déconnecter" arrow>
+          {isLogged ? (
+            <Tooltip title="Se déconnecter" onClick={handleLogout} arrow>
               <IconButton color="inherit">
                 <LogoutOutlinedIcon style={{ color: '#FF6666' }} />
               </IconButton>

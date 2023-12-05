@@ -1,8 +1,8 @@
 // Mui
 import { Box } from '@mui/material';
 // API
-import { useQuery } from '@apollo/client';
-import { GET_PROJECT } from '../../api/queries/queries';
+// import { useQuery } from '@apollo/client';
+// import { GET_PROJECT } from '../../api/queries/queries';
 // Components
 import CardComponent from '../../components/Card/Card';
 import ToolbarComponent from '../../components/Toolbar/Toolbar';

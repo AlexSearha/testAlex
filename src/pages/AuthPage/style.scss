@@ -31,3 +31,10 @@
   margin-bottom: 30px;
   padding: 40px 30px;
 }
+
+@media screen and (max-width: 768px) {
+  .login-logo p {
+    width: 75%;
+    text-align: center;
+  }
+}
