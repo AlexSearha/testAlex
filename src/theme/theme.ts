@@ -79,9 +79,11 @@ const customTabs = createTheme({
       styleOverrides: {
         root: {
           margin: '5px',
+          padding: '0px',
           borderRadius: 25,
           textTransform: 'none',
           fontWeight: 'bold',
+          minHeight: '40px',
           '&.Mui-selected': {
             boxShadow: '1px 1px 3px #00000066',
             fontWeight: 'bold',

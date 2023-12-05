@@ -3,7 +3,8 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
+import test from '../../assets/project-placeholder-dark.webp';
 // Components
 import DropdownCard from '../Dropdowns/Dropdown';
 // CSS
@@ -14,15 +15,31 @@ import DropdownCard from '../Dropdowns/Dropdown';
 // --------------------------------------------------------------------//
 
 export default function CardComponent() {
+  const theme = useTheme();
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        flex: '1 0 auto',
+        maxWidth: 266,
+        boxShadow: 0,
+        backgroundColor: theme.palette.background.default,
+      }}
+    >
       <CardMedia
         component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
+        image={test}
+        alt="dark-placeholder"
+        height={168}
       />
-      <CardContent sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <CardContent
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: 0,
+          backgroundColor: theme.palette.background.default,
+          pt: 1,
+        }}
+      >
         <Box>
           <Typography
             sx={{ fontWeight: 'bold' }}

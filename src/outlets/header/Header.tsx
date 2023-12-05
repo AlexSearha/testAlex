@@ -1,4 +1,5 @@
 // MUI
+import { useTheme } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -16,29 +17,42 @@ import { useThemeContext } from '../../theme/ThemeContextProvider';
 
 export default function Header() {
   const { mode, toggleColorMode } = useThemeContext();
+  const theme = useTheme();
 
   // ----------------------------RETURN----------------------------------//
 
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          {/* {username} */}
-          Bienvenu Alexis
-        </Typography>
+    <AppBar
+      position="static"
+      sx={{ background: theme.palette.background.default, boxShadow: 0 }}
+    >
+      <Toolbar sx={{ justifyContent: true ? 'normal' : 'flex-end' }}>
+        {true && (
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, color: theme.palette.text.secondary }}
+            fontWeight={700}
+          >
+            {/* {username} */}
+            Bienvenu Alexis
+          </Typography>
+        )}
         <div>
-          <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">
+          <IconButton sx={{ ml: 1 }} onClick={toggleColorMode}>
             {mode === 'light' ? (
               <DarkModeOutlinedIcon />
             ) : (
               <LightModeOutlinedIcon />
             )}
           </IconButton>
-          <Tooltip title="Se déconnecter" arrow>
-            <IconButton color="inherit">
-              <LogoutOutlinedIcon style={{ color: 'red' }} />
-            </IconButton>
-          </Tooltip>
+          {true ? (
+            <Tooltip title="Se déconnecter" arrow>
+              <IconButton color="inherit">
+                <LogoutOutlinedIcon style={{ color: '#FF6666' }} />
+              </IconButton>
+            </Tooltip>
+          ) : null}
         </div>
       </Toolbar>
     </AppBar>
