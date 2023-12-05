@@ -29,7 +29,6 @@ export default function Header() {
       <Toolbar sx={{ justifyContent: true ? 'normal' : 'flex-end' }}>
         {true && (
           <Typography
-            variant="h6"
             component="div"
             sx={{ flexGrow: 1, color: theme.palette.text.secondary }}
             fontWeight={700}
