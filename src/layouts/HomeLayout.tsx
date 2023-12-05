@@ -1,7 +1,7 @@
 // React
 import { Outlet } from 'react-router-dom';
 // Components
-import Header from '../outlets/header/Header';
+import Header from '../components/header/Header';
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
 // --------------------------------------------------------------------//
