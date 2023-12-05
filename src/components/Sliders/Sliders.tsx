@@ -1,5 +1,5 @@
 // React
-import React, { useState } from 'react';
+import React from 'react';
 // MUI
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -7,14 +7,17 @@ import Box from '@mui/material/Box';
 import { ThemeProvider } from '@mui/material/styles';
 // Components
 import { customTabs } from '../../theme/theme';
+// inteface
+interface Props {
+  tabSelect: number;
+  setTabSelect: React.Dispatch<React.SetStateAction<number>>;
+}
 
 // --------------------------------------------------------------------//
 // ----------------------------Component-------------------------------//
 // --------------------------------------------------------------------//
 
-export default function Sliders() {
-  const [tabSelect, setTabSelect] = useState(0);
-
+export default function Sliders({ setTabSelect, tabSelect }: Props) {
   // ----------------------------FUNCTIONS------------------------------//
 
   const handleChange = (event: React.ChangeEvent<object>, newValue: number) => {
