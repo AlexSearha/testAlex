@@ -6,7 +6,9 @@ import useColorTheme from './useColorTheme';
 type ThemeContextType = {
   mode: string;
   toggleColorMode: () => void;
+  toggleIsLogged: () => void;
   theme: Theme;
+  isLogged: boolean;
 };
 
 // ----------------------------FUNCTIONS------------------------------//
@@ -14,7 +16,9 @@ type ThemeContextType = {
 export const ThemeContext = createContext<ThemeContextType>({
   mode: 'light',
   toggleColorMode: () => {},
+  toggleIsLogged: () => {},
   theme: createTheme(),
+  isLogged: false,
 });
 
 // --------------------------------------------------------------------//

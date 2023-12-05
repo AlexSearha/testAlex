@@ -1,7 +1,6 @@
 // MUI
 import TextField from '@mui/material/TextField';
-import { Box, ThemeProvider } from '@mui/material';
-import { themeInput } from '../../theme/theme';
+import { Box, useTheme } from '@mui/material';
 // interface
 interface InputGroupProps {
   setEmail: React.Dispatch<React.SetStateAction<string>>;
@@ -20,25 +19,34 @@ export default function InputGroup({
   setPassword,
   password,
 }: InputGroupProps) {
+  const theme = useTheme();
   // ----------------------------RETURN----------------------------------//
 
   return (
-    <ThemeProvider theme={themeInput}>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }} m={1}>
-        <TextField
-          placeholder="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          placeholder="Mot de passe"
-          type="password"
-          value={password}
-          InputProps={{ disableUnderline: true }}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </Box>
-    </ThemeProvider>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: theme.palette.background.default,
+        // '& .MuiOutlinedInput-notchedOutline': {
+        //   border: theme.palette.divider,
+        // },
+      }}
+      m={1}
+    >
+      <TextField
+        placeholder="Email"
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <TextField
+        placeholder="Mot de passe"
+        type="password"
+        value={password}
+        InputProps={{ disableUnderline: true }}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+    </Box>
   );
 }
