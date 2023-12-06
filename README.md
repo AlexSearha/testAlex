@@ -58,11 +58,11 @@ Le header possède de variables qui dependent du context et se manifestent,ou no
 
 ## MUI
 
-Tout le design CSS à été développé avec la librairie Material UI et une petite partie en SASS pour la gestion des mediasQueries.
+Tout le design CSS à été développé avec la librairie `Material UI` et une petite partie en `SASS` pour la gestion des mediasQueries.
 
 ## Fakes Datas
 
-Pour pallier au problemes liés aux fetch de la liste des projets sur votre API, j'ai du simuler l'obtention d'un tableau d'objet et qui .map sur cette liste -ci afin d'en extraire ses données et l'afficher dynamiquement sur la page de desktop.
+Pour pallier aux problèmes liés aux fetch de la liste des projets sur votre API, j'ai dû simuler l'obtention d'un tableau d'objets et utiliser `.map` sur cette liste-ci afin d'en extraire les données et les afficher dynamiquement sur la page de bureau.
 
 ## Hors Ligne (PWA)
 
@@ -72,7 +72,7 @@ Activez l'accès hors ligne à l'application en en faisant une application Web p
 
 ## GraphQL
 
-1. En effet, je le confesse, ce fut la première fois que je travaillais avec une API GraphQL. Jusqu'à présent, je n'avais travaillé qu'avec des API REST. J'ai découvert l'environnement Apollo, qui reste néanmoins assez similaire du point de vue des queries et mutations que j'ai pu expérimenter sur React-Query ou RTK-Query de Redux. Je conçois que je n'ai pas pu vous prouver mes capacités CRUD sur votre application, mais si vous le souhaitez, vous pouvez jeter un œil à ce que j'ai fait sur un autre projet qui fait des requêtes sur une API REST (Express) que j'ai développée. j'ai utilisé RTK-query pour definir les endpoints. L'application en question est visible ici :
+1. En effet, je le confesse, ce fut la première fois que je travaillais avec une API GraphQL. Jusqu'à présent, je n'avais travaillé qu'avec des API REST. J'ai découvert l'environnement Apollo, qui reste néanmoins assez similaire du point de vue des queries et mutations que j'ai pu expérimenter sur React-Query ou RTK-Query de Redux. Je conçois que je n'ai pas pu vous prouver mes capacités CRUD sur votre application, mais si vous le souhaitez, vous pouvez jeter un œil sur le code que j'ai réalisé sur un autre projet qui execute des requêtes sur une API REST (Express) que j'ai développée. J'ai utilisé `RTK-Query` pour définir les endpoints. L'application en question est visible ici :
 
    ```bash
    https://github.com/AlexSearha/adeuxpas-Front
@@ -80,8 +80,8 @@ Activez l'accès hors ligne à l'application en en faisant une application Web p
 
 # Conclusion
 
-Au dela de ma frustration vis à vis de la connexion à votre API, ce fut un challenge très enrichissant et une belle découverte de l'univers GraphQL,
+Au-delà de ma frustration vis-à-vis de la connexion à votre API, ce fut un challenge très enrichissant et une belle découverte de l'univers GraphQL !
 
-Merci pour ce challenge intéréssant et j'espere que j'ai fait vous plaira !
+Merci pour ce challenge intéressant et j'espère que ce que j'ai fait vous plaira !
 
 Alexis
