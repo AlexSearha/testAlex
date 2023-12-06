@@ -1,3 +1,4 @@
+// MUI
 import { Button, Stack, Typography, useTheme } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import AddIcon from '@mui/icons-material/Add';
@@ -8,6 +9,9 @@ import AddIcon from '@mui/icons-material/Add';
 
 export default function ToolbarComponent() {
   const theme = useTheme();
+
+  // ----------------------------RETURN----------------------------------//
+
   return (
     <Toolbar
       sx={{

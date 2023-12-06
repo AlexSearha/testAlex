@@ -32,6 +32,9 @@ export const ThemeContextProvider: FC<PropsWithChildren> = ({
   children?: React.ReactNode;
 }) => {
   const value = useColorTheme();
+
+  // ----------------------------RETURN----------------------------------//
+
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
