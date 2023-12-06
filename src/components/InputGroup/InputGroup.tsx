@@ -28,9 +28,6 @@ export default function InputGroup({
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: theme.palette.background.default,
-        // '& .MuiOutlinedInput-notchedOutline': {
-        //   border: theme.palette.divider,
-        // },
       }}
       m={1}
     >

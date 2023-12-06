@@ -2,7 +2,7 @@
 
 ## Description
 
-Cette mini-application React implémente un écran de connexion, une barre de navigation et une page de liste de projets basés sur les maquettes fournies sur Figma. Elle intègre des fonctionnalités telles que l'authentification utilisateur, une mise en page responsive, et des interactions avec GraphQL. L'application comprend également des fonctionnalités optionnelles telles que le mode sombre/clair, la suppression de projet, et la possibilité d'être utilisée hors ligne en tant qu'application Web progressive (PWA).
+Cette mini-application React est une simulation d'une application déjà existante de la société ARCHIREPORT. Elle est un rendu qui implémente un écran de connexion, une barre de navigation et une page de liste de projets basés sur les maquettes fournies sur Figma. Elle intègre des fonctionnalités telles que l'authentification utilisateur, une mise en page responsive. L'application comprend également des fonctionnalités optionnelles telles que le mode sombre/clair, la suppression de projet, et la possibilité d'être utilisée hors ligne en tant qu'application Web progressive (PWA). L'application n'a pas de connexion GraphQL car la connexion à celle-ci n'a pas été possible dans mon cas.
 
 ## Dépendances
 
@@ -42,7 +42,7 @@ Cette mini-application React implémente un écran de connexion, une barre de na
 
 2. Ouvrez votre navigateur et visitez [http://localhost:5173/](http://localhost:5173/) pour voir l'application.
 
-## Fonctionnalités Bonus
+# Fonctionnalités Bonus
 
 ## Mode Sombre/Clair
 
@@ -52,10 +52,36 @@ Basculez entre les modes sombre et clair pour améliorer l'expérience utilisate
 
 Le slider n'était pas sensé etre fonctionnel mais il à été tout de meme codé donc fonctionnel
 
-## Suppression de Projet
+## Dynamisme du header
 
-Implémentez la fonctionnalité de suppression de projet pour retirer les projets indésirables.
+Le header possède de variables qui dependent du context et se manifestent,ou non, en fonction de l'authentification d'un user.
+
+## MUI
+
+Tout le design CSS à été développé avec la librairie Material UI et une petite partie en SASS pour la gestion des mediasQueries.
+
+## Fakes Datas
+
+Pour pallier au problemes liés aux fetch de la liste des projets sur votre API, j'ai du simuler l'obtention d'un tableau d'objet et qui .map sur cette liste -ci afin d'en extraire ses données et l'afficher dynamiquement sur la page de desktop.
 
 ## Hors Ligne (PWA)
 
 Activez l'accès hors ligne à l'application en en faisant une application Web progressive.
+
+# Issues
+
+## GraphQL
+
+1. En effet, je le confesse, ce fut la première fois que je travaillais avec une API GraphQL. Jusqu'à présent, je n'avais travaillé qu'avec des API REST. J'ai découvert l'environnement Apollo, qui reste néanmoins assez similaire du point de vue des queries et mutations que j'ai pu expérimenter sur React-Query ou RTK-Query de Redux. Je conçois que je n'ai pas pu vous prouver mes capacités CRUD sur votre application, mais si vous le souhaitez, vous pouvez jeter un œil à ce que j'ai fait sur un autre projet qui fait des requêtes sur une API REST (Express) que j'ai développée. j'ai utilisé RTK-query pour definir les endpoints. L'application en question est visible ici :
+
+   ```bash
+   https://github.com/AlexSearha/adeuxpas-Front
+   ```
+
+# Conclusion
+
+Au dela de ma frustration vis à vis de la connexion à votre API, ce fut un challenge très enrichissant et une belle découverte de l'univers GraphQL,
+
+Merci pour ce challenge intéréssant et j'espere que j'ai fait vous plaira !
+
+Alexis
