@@ -1,0 +1,40 @@
+@use '../../styles/variables' as v;
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  & img {
+    position: relative;
+    max-width: 222px;
+    margin-bottom: 17px;
+    filter: invert(30%) sepia(8%) saturate(535%) hue-rotate(230deg)
+      brightness(94%) contrast(92%);
+  }
+
+  & p {
+    font-weight: 500;
+    margin-bottom: 60px;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  min-height: 360px;
+  gap: 30px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #00000033;
+  margin-bottom: 30px;
+  padding: 40px 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .login-logo p {
+    width: 75%;
+    text-align: center;
+  }
+}
